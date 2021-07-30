@@ -26,43 +26,43 @@ Command: `start chrome.exe --allow-file-access-from-files`
 
 To run the project, do the following steps:
 
-1) Install the dev/dependencies. Use `npm i` **and** `npm i -also=dev`
+1. Install the dev/dependencies. Use `npm i` **and** `npm i -also=dev`
 
-2) Install Browserify and Watchify globally. Use the following commands:
+2. Install Browserify and Watchify globally:
 
 `npm i -g browserify` **and** `npm i -g watchify`
 
-#### If you want to run the project through the browser, do the following:
-
-    3) Bundle the js files into one js file by writing the following command, and watch for changes:
+3. Now you have two ways, either you run the project through the browser:
+    
+    1. Bundle the js files into one js file and watch for changes:
 
     `watchify public/js/ajax_file.js public/js/ajax_url.js -o public/js/bundle.js -v`
 
     Note: Don't attach the "v" flag if you don't want to see update states.
 
-    4) Launch the Chrome browser via the terminal with the --allow-file-access-from-files flag.
+    2. Launch the Chrome browser via the terminal with the --allow-file-access-from-files flag.
 
-    5) Copy the path of the home.html file, and paste it on the chrome browser you have launched.
+    3. Copy the path of the home.html file and paste it on the chrome browser you have launched.
 
-#### Otherwise, run the project through the server (Recommended) by doing the next few steps:
+4. Or you run the project through the server (Recommended):
 
-    3) Bundle the js files into one js file by writing the following command:
+    1. Bundle the js files into one js file by writing the following command:
 
     `browserify public/js/ajax_file.js public/js/ajax_url.js -o public/js/bundle.js`
 
-    4) Install nodemon globally if you haven't installed it before to watch for changes:
+    2. Install nodemon globally if you haven't installed it before to watch for changes:
 
     `npm i -g nodemon`
 
-    **Or simply skip this step and the next one, use instead:** `node app.js`
+    **You can simply skip this step and the next one following it. Use instead:** `node app.js`
 
-    5) Run the server by writing on the terminal:
+    3. Run the server by writing on the terminal:
 
     `nodemon`
 
 ### Notes:
 
-- The moment you close the chrome, the flags will be reset. Meaning that you have to enable the file flag whenever you want to use the project. It is unsafe to use anyway, so this is for the best.
+The moment you close the chrome, the flags will be reset. Meaning that you have to enable the file flag whenever you want to use the project. It is unsafe to use anyway, so this is for the best.
 
 ### Resources for Further Reading:
 
