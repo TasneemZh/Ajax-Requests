@@ -1,4 +1,4 @@
-The project shows how AJAX requests work with URLs and local files.
+The project shows how AJAX requests/calls work with URLs and local files. The project works on both the client and server sides. In other words, you can run it either way. However, it is has been built to run on the server-side, thus doing the same is recommended.
 
 ### Some clarification about each type:
 
@@ -14,7 +14,7 @@ The *open* function doesn't take files since the CORS support a set of protocols
 
 To achieve that, do the following on your terminal:
 
-* Move to the directory in which the executable chrome file is sets.
+* Move to the directory in which the executable chrome file is set.
 
 Example: `cd C:/Program\ Files/Google/Chrome/`
 
@@ -28,19 +28,37 @@ To run the project, do the following steps:
 
 1) Install the dev/dependencies. Use `npm i` **and** `npm i -also=dev`
 
-2) Install Browserify and Watchify globally, use the following commands:
+2) Install Browserify and Watchify globally. Use the following commands:
 
 `npm i -g browserify` **and** `npm i -g watchify`
 
-3) Bundle the js files into one file by writing the following command, and watch for changes:
+#### If you want to run the project through the browser, do the following:
 
-`watchify public/js/ajax_file.js public/js/ajax_url.js -o public/js/bundle.js -v`
+    3) Bundle the js files into one js file by writing the following command, and watch for changes:
 
-Note: Don't attach the "v" flag if you don't want to see update states.
+    `watchify public/js/ajax_file.js public/js/ajax_url.js -o public/js/bundle.js -v`
 
-4) Launch the Chrome browser via the terminal with the --allow-file-access-from-files flag.
+    Note: Don't attach the "v" flag if you don't want to see update states.
 
-5) Copy the path of the home.html file, and paste it on the chrome browser you have launched.
+    4) Launch the Chrome browser via the terminal with the --allow-file-access-from-files flag.
+
+    5) Copy the path of the home.html file, and paste it on the chrome browser you have launched.
+
+#### Otherwise, run the project through the server (Recommended) by doing the next few steps:
+
+    3) Bundle the js files into one js file by writing the following command:
+
+    `browserify public/js/ajax_file.js public/js/ajax_url.js -o public/js/bundle.js`
+
+    4) Install nodemon globally if you haven't installed it before to watch for changes:
+
+    `npm i -g nodemon`
+
+    **Or simply skip this step and the next one, use instead:** `node app.js`
+
+    5) Run the server by writing on the terminal:
+
+    `nodemon`
 
 ### Notes:
 
