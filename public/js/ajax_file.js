@@ -30,3 +30,4 @@ function makeRequest() {
 }
 
 document.getElementById('reqs_btn_file').addEventListener('click', makeRequest);
+console.log('Entered the js bundled file');
