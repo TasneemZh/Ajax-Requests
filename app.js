@@ -8,7 +8,6 @@ const { createWriteStream } = require('fs');
 const app = express();
 
 app.use(express.static(join(__dirname, '/public')));
-app.set('view engine', 'ejs');
 
 async function downloadImage() {
   try {
@@ -17,23 +16,23 @@ async function downloadImage() {
     const destImage = join(__dirname, '/public', 'images', 'news.jpg');
     await writeFile(destImage, buffer, (error) => {
       if (error) {
-        throw new Error(error.message);
+        throw new Error(error);
       }
     });
   } catch (error) {
-    alert(`Well, errors can happen: ${error.message}`);
+    console.error(`Well, errors can happen: ${error.message}`);
   }
 }
 
 function bundleFiles() {
   try {
     const bundled = browserify();
-    bundled.add([join(__dirname, '/public', 'js', 'ajax_file.js'), join(__dirname, '/public', 'js', 'ajax_url.js')]);
+    bundled.add(join(__dirname, '/public', 'js', 'ajax-call.js'));
     const destFile = join(__dirname, '/public', 'js', 'bundle.js');
     const writable = createWriteStream(destFile);
     bundled.bundle().pipe(writable);
   } catch (error) {
-    alert(`Well, errors can happen: ${error.message}`);
+    console.error(`Well, errors can happen: ${error.message}`);
   }
 }
 
