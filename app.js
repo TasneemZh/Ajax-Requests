@@ -27,7 +27,7 @@ async function downloadImage() {
 function bundleFiles() {
   try {
     const bundled = browserify();
-    bundled.add(join(__dirname, '/public', 'js', 'ajax-call.js'));
+    bundled.add(join(__dirname, '/public', 'js', 'click-event.js'));
     const destFile = join(__dirname, '/public', 'js', 'bundle.js');
     const writable = createWriteStream(destFile);
     bundled.bundle().pipe(writable);
