@@ -3,7 +3,7 @@
     right: 40%;
     padding: 10px;
 }
-    
+
 #reqs_btn_url, #reqs_btn_file {
     width: 20rem;
     height: 4rem;
@@ -18,9 +18,3 @@
     bottom: 0;
     right: 23%;
 }
-
-.img_style {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-  }
